@@ -1,8 +1,8 @@
+open MaterialUi
+let appStyle = ReactDOM.Style.make(~width="100vw", ())
+let typStyle = ReactDOM.Style.make(~backgroundColor="#cfe8fc", ~height="100vh", ())
 @react.component
-let make = () => {
-  let (count, setCount) = React.useState(_ => 0)
-  let onInc = _ => setCount(v => v + 1)
-  <div>
-    {React.int(count)} <br /> <IncButton onClick={_ => onInc()}> {React.string("inc")} </IncButton>
+let make = () =>
+  <div style=appStyle>
+    <CssBaseline /> <Container fixed=true> <Typography style=typStyle /> </Container>
   </div>
-}
